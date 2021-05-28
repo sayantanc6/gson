@@ -52,6 +52,7 @@ public class WebConfig implements WebMvcConfigurer {
         	        return LocalDate.parse(json.getAsJsonPrimitive().getAsString());
         	}
         });
+        b.registerTypeAdapter(LocalDate.class, new LocalDateAdapter());
         return b.create();
     }
 
